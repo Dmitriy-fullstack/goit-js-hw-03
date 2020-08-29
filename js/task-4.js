@@ -1,18 +1,28 @@
-function formatString (string, maxLength = 40) {
-    // Write code under this line
-    if (string.length <= maxLength) {
-      return string;
-    } else {
-      const stringNew = string.slice(0,maxLength);
-      return `${stringNew}...`
-    }
+const countTotalSalary = function(employees) {
+  'use strict';
+  // Write code under this line
+  let total = 0;
+  const keys = Object.keys(employees);
+  
+  for (const key of keys) {
+    total += employees[key];
   }
-  
-  console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
-  // 'Curabitur ligula sapien, tincidunt non.'
-  
-  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
-  // 'Vestibulum facilisis, purus nec pulvinar...'
-  
-  console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.', 30));
-  // 'Vestibulum facilisis, purus ne...'
+  return total;
+};
+
+// Объекты и ожидаемый результат
+const developers = {
+    mango: 300,
+    poly: 250,
+    alfred: 450,
+};
+console.log(countTotalSalary(developers));
+// 1000
+
+const supports = {
+  kiwi: 200,
+  lux: 150,
+  chelsy: 150,
+}
+console.log(countTotalSalary(supports));
+// 500
