@@ -1,13 +1,11 @@
-const calculateEngravingPrice = (message = "", pricePerWord = 0) => 
-   message.split(" ").length * pricePerWord;
+const countProps = function(obj) {
+   'use strict';
+ // Write code under this line
+ const keys = Object.keys(obj);
+ return keys.length;
+};
+console.log(countProps({})); // 0
 
+console.log(countProps({a:1, b:1})); // 2
 
-console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 10)); 
-
-console.log(calculateEngravingPrice('Proin sociis natoque et magnis parturient montes mus', 20)); 
-
-console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 40)); 
-
-console.log(calculateEngravingPrice('Donec orci lectus aliquam est magnis', 20)); 
-
-console.log(calculateEngravingPrice('Uno', 100)); 
+console.log(countProps({a:1, b:1, c:1, d:1, e:1})); // 5
